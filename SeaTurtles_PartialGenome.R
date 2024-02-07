@@ -15,3 +15,17 @@ myClustalWAlignment
 myClustalWAlignment <- msa(sequences, "ClustalW")
 myClustalWAlignment
 
+print(myClustalWAlignment,show="complete")
+alphabetFrequency(x, as.prob=FALSE)
+hasOnlyBaseLetters(x)
+uniqueLetters(x)
+aligned(sequences)
+SeqAlign <- pairwiseAlignment(sequences)
+sequences
+homoSeq <- readAAStringSet(system.file("sequences", package ="msa"))
+hemoSeq <- readAAStringSet(system.file("sequences",
+                                       package="msa"))
+hemoAln <- msa(hemoSeq)
+library(seqinr)
+d <- dist.alignment(sequences, "identity")
+Alignment_phyDat <- msaConvert(Alignment,type="phangorn"phyDat)write.phyDat(Alignment_phyDat, "Sea-Turtle-10.fasta", format= "fasta")
