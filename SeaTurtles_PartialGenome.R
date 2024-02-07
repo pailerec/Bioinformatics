@@ -8,5 +8,10 @@ seq_2
 seq_3
 sequences <- c(seq_1, seq_2, seq_3, seq_4, seq_5)
 sequences
-
+myClustalWAlignment <- msa(mySequences, "ClustalW")
+myClustalWAlignment
+## CLUSTAL 2.1
+##
+myClustalWAlignment <- msa(sequences, "ClustalW")
+myClustalWAlignment
 
