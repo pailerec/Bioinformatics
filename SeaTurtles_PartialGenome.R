@@ -1,3 +1,8 @@
+library(Biostrings)
+library(seqinr)
+
+
+
 seq_1 <- readDNAStringSet("~/Documents/GitHub/Bioinformatics/Sea-Turtle-10.fasta")
 seq_2 <- readDNAStringSet("~/Documents/GitHub/Bioinformatics/Sea-Turtle-11.fasta")
 seq_3 <- readDNAStringSet("~/Documents/GitHub/Bioinformatics/Sea-Turtle-12.fasta")
@@ -8,17 +13,21 @@ seq_2
 seq_3
 sequences <- c(seq_1, seq_2, seq_3, seq_4, seq_5)
 sequences
-myClustalWAlignment <- msa(mySequences, "ClustalW")
-myClustalWAlignment
+# myClustalWAlignment <- msa(mySequences, "ClustalW")
+# myClustalWAlignment
 ## CLUSTAL 2.1
 ##
 myClustalWAlignment <- msa(sequences, "ClustalW")
 myClustalWAlignment
 
 print(myClustalWAlignment,show="complete")
-alphabetFrequency(x, as.prob=FALSE)
-hasOnlyBaseLetters(x)
-uniqueLetters(x)
+
+alphabetFrequency(myClustalWAlignment, as.prob=FALSE)
+
+hasOnlyBaseLetters(sequences)
+
+uniqueLetters(sequences)
+
 aligned(sequences)
 SeqAlign <- pairwiseAlignment(sequences)
 sequences
@@ -28,4 +37,5 @@ hemoSeq <- readAAStringSet(system.file("sequences",
 hemoAln <- msa(hemoSeq)
 library(seqinr)
 d <- dist.alignment(sequences, "identity")
-Alignment_phyDat <- msaConvert(Alignment,type="phangorn"phyDat)write.phyDat(Alignment_phyDat, "Sea-Turtle-10.fasta", format= "fasta")
+Alignment_phyDat <- msaConvert(Alignment,type="phangorn")
+write.phyDat(Alignment_phyDat, "Sea-Turtle-10.fasta", format= "fasta")
