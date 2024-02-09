@@ -13,6 +13,7 @@ seq_2
 seq_3
 sequences <- c(seq_1, seq_2, seq_3, seq_4, seq_5)
 sequences
+
 # myClustalWAlignment <- msa(mySequences, "ClustalW")
 # myClustalWAlignment
 ## CLUSTAL 2.1
@@ -32,10 +33,11 @@ aligned(sequences)
 SeqAlign <- pairwiseAlignment(sequences)
 sequences
 homoSeq <- readAAStringSet(system.file("sequences", package ="msa"))
-hemoSeq <- readAAStringSet(system.file("sequences",
-                                       package="msa"))
+hemoSeq <- readAAStringSet(system.file("sequences",package="msa"))
 hemoAln <- msa(hemoSeq)
 library(seqinr)
 d <- dist.alignment(sequences, "identity")
 Alignment_phyDat <- msaConvert(Alignment,type="phangorn")
 write.phyDat(Alignment_phyDat, "Sea-Turtle-10.fasta", format= "fasta")
+hemoSeq <- readAAStringSet()
+writeXStringSet(sequences, filepath =paste(".fasta"), format ="fasta")
