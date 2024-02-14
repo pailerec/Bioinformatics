@@ -53,4 +53,11 @@ library(msa)
 nchar(SeaturtleAln)
 alfreq <- alphabetFrequency(SeaturtleAln)
 alfreq
-GC <- sum(alFreq)
+GC <- sum(alFreq[, "C"]) + sum(alFreq[,"G"])
+alfreq
+SeaturtleAln2 <- msaConvert(SeaturtleAln, type="seqinr::alignment")
+d <- dist.alignment(SeaturtleAln2, "identity")
+100 - (round(as.matrix(d)[, "Sea-Turtle-10.fasta", drop=FALSE], digits = 2)* 100)
+Sea-Turtle6 <- Biostrings:: translate(Sea-Turtle-10.fasta)
+seq_1_AA<- Biostrings:: translate(Sea-Turtle-10.fasta)
+SeaturtleAln2_phyn <- msaConvert(SeaturtleAln, type="phangorn")
